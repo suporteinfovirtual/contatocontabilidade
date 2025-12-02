@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acessos - Contato Contabilidade</title>
+    <title>Acessos Web - Contato Contabilidade</title>
     <style>
-        /* Estilos CSS - Mantidos e ligeiramente ajustados */
+        /* Estilos CSS - Ajustados para layout de duas colunas */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f7f6;
             color: #333;
+            margin: 0;
+            padding: 20px; /* Adiciona um pouco de padding ao redor */
+        }
+
+        /* Novo wrapper para as duas colunas */
+        .main-wrapper {
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
+            gap: 40px; /* Espaço entre as colunas */
+            flex-wrap: wrap; /* Permite quebrar para uma coluna em telas menores */
+            max-width: 1300px; /* Limite a largura total */
+            margin: 0 auto; /* Centraliza o wrapper */
         }
 
         .container {
@@ -23,20 +30,28 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             width: 100%;
-            /* AUMENTO DA LARGURA MÁXIMA PARA ACOMODAR TEXTOS LONGOS */
             max-width: 600px; 
-            text-align: center;
+            text-align: left; /* Alinhamento à esquerda conforme solicitado */
+            margin-bottom: 20px; /* Espaço entre os containers em telas pequenas */
         }
 
         h1 {
             color: #2c3e50;
             margin-bottom: 5px;
             font-size: 1.8em;
+            text-align: center; /* Centraliza o título principal */
+        }
+        
+        .column-title {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1.8em;
+            text-align: center; /* Centraliza o título da coluna */
         }
 
         h2 {
             color: #2c3e50;
-            margin-top: 30px; /* Adicionado um pouco de espaço acima do novo h2 */
+            margin-top: 30px; 
             margin-bottom: 15px;
             font-size: 1.4em;
         }
@@ -104,7 +119,6 @@
             border-radius: 6px;
             transition: background-color 0.3s;
             font-weight: bold;
-            /* Garante que o texto não quebre no meio do botão */
             white-space: normal; 
         }
 
@@ -165,117 +179,180 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             font-size: 1em;
         }
+        
+        /* Media Query para telas menores */
+        @media (max-width: 1200px) {
+            .main-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
 
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Contato Contabilidade</h1>
+    <h1>Acessos Web - Contato Contabilidade</h1>
 
-    <div class="credentials">
-        <strong>Credenciais de Acesso:</strong>
+    <div class="main-wrapper">
         
-        <div class="credential-item">
-            <span id="user-text">Usuário: contato</span>
-            <button class="copy-btn" onclick="copyToClipboard('user-text', 'Usuário')">Copiar</button>
-        </div>
-        
-        <div class="credential-item">
-            <span id="password-text">Senha: 33335169</span>
-            <button class="copy-btn" onclick="copyToClipboard('password-text', 'Senha')">Copiar</button>
-        </div>
-    </div>
+        <!-- COLUNA ESQUERDA: UNIPLUS WEB -->
+        <div class="container uniplus-container">
+            <h1 class="column-title">Uniplus Web</h1>
 
-    <h2>Acessos Rápidos</h2>
-    
-    <ul class="links-list" id="lista-de-links">
-        <li>
-            <a href="https://canal.intelidata.inf.br/acesso/30897875000107" target="_blank">Mundial Auto Center 30.897.875/0001-07</a>
-        </li>
-        
-        <li>
-            <a href="https://canal.intelidata.inf.br/acesso/58398847000156" target="_blank">Morais Pizzaria 58.398.847/0001-56</a>
-        </li>
-        <li>
-            <a href="https://canal.intelidata.inf.br/acesso/11546357000196" target="_blank">Pesque Pague Loes 11.546.357/0001-96</a>
-        </li>
-        <li>
-            <a href="https://canal.intelidata.inf.br/acesso/13855865000181" target="_blank">Moane Creperia 13.855.865/0001-81</a>
-        </li>
-        <li>
-            <a href="https://canal.intelidata.inf.br/acesso/33872070000199" target="_blank">C e A Bike Shop 33.872.070/0001-99</a>
-        </li>
-        <li>
-            <a href="https://canal.intelidata.inf.br/acesso/51537238000191" target="_blank">SA Alimentos 51.537.238/0001-91</a>
-        </li>
-      
-
-    </ul>
-    
-    <!-- NOVO BLOCO: VÍDEO DE INSTRUÇÃO -->
-    <h2>Vídeo de Instrução</h2>
-    <div class="video-container">
-        <iframe 
-            src="https://www.youtube.com/embed/wKGZ0bkk_yU" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
-    <!-- FIM DO NOVO BLOCO -->
-    
-    <a href="https://wa.me/554733333663" class="support-btn" target="_blank">
-        Fale com o Suporte (WhatsApp) 📞
-    </a>
-    
-</div>
-
-<div id="message">Copiado com sucesso!</div>
-
-<script>
-    /**
-     * Função para copiar o texto de um elemento HTML para a área de transferência.
-     * @param {string} elementId O ID do elemento <span> que contém o texto (ex: 'user-text').
-     * @param {string} itemType O tipo de item sendo copiado (ex: 'Usuário' ou 'Senha').
-     */
-    function copyToClipboard(elementId, itemType) {
-        // Pega o elemento pelo ID
-        const element = document.getElementById(elementId);
-        
-        // Pega o texto completo do elemento (ex: "Usuário: cristofoli")
-        let fullText = element.innerText;
-        
-        // Remove o prefixo para pegar apenas o valor
-        let valueToCopy = fullText.split(':')[1].trim();
-
-        // Usa a API moderna navigator.clipboard
-        navigator.clipboard.writeText(valueToCopy)
-            .then(() => {
-                // Sucesso: Mostra a mensagem de confirmação
-                const message = document.getElementById('message');
-                message.innerText = itemType + ' copiado com sucesso!';
-                message.style.display = 'block';
+            <div class="credentials">
+                <strong>Credenciais de Acesso:</strong>
                 
-                // Esconde a mensagem após 2 segundos
-                setTimeout(() => {
-                    message.style.display = 'none';
-                }, 2000);
-            })
-            .catch(err => {
-                // Erro
-                console.error('Falha ao copiar:', err);
-                alert('Erro ao tentar copiar o texto. Tente copiar manualmente.');
-            });
-    }
-</script>
+                <div class="credential-item">
+                    <span id="uniplus-user-text">Usuário: contato</span>
+                    <button class="copy-btn" onclick="copyToClipboard('uniplus-user-text', 'Usuário Uniplus')">Copiar</button>
+                </div>
+                
+                <div class="credential-item">
+                    <span id="uniplus-password-text">Senha: 33335169</span>
+                    <button class="copy-btn" onclick="copyToClipboard('uniplus-password-text', 'Senha Uniplus')">Copiar</button>
+                </div>
+            </div>
+
+            <h2>Acessos Rápidos</h2>
+            
+            <ul class="links-list">
+                <li>
+                    <a href="https://canal.intelidata.inf.br/acesso/30897875000107" target="_blank">Mundial Auto Center 30.897.875/0001-07</a>
+                </li>
+                
+                <li>
+                    <a href="https://canal.intelidata.inf.br/acesso/58398847000156" target="_blank">Morais Pizzaria 58.398.847/0001-56</a>
+                </li>
+                <li>
+                    <a href="https://canal.intelidata.inf.br/acesso/11546357000196" target="_blank">Pesque Pague Loes 11.546.357/0001-96</a>
+                </li>
+                <li>
+                    <a href="https://canal.intelidata.inf.br/acesso/13855865000181" target="_blank">Moane Creperia 13.855.865/0001-81</a>
+                </li>
+                <li>
+                    <a href="https://canal.intelidata.inf.br/acesso/33872070000199" target="_blank">C e A Bike Shop 33.872.070/0001-99</a>
+                </li>
+                <li>
+                    <a href="https://canal.intelidata.inf.br/acesso/51537238000191" target="_blank">SA Alimentos 51.537.238/0001-91</a>
+                </li>
+            </ul>
+            
+            <!-- NOVO BLOCO: VÍDEO DE INSTRUÇÃO -->
+            <h2>Vídeo de Instrução</h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/wKGZ0bkk_yU" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <!-- FIM DO NOVO BLOCO -->
+            
+            <a href="https://wa.me/554733333663" class="support-btn" target="_blank">
+                Fale com o Suporte (WhatsApp) 📞
+            </a>
+            
+        </div>
+        
+        <!-- COLUNA DIREITA: ZETA WEB -->
+        <div class="container zeta-container">
+            <h1 class="column-title">Zeta Web</h1>
+
+            <a href="https://zweb.com.br/#/sign-in" class="support-btn" target="_blank" style="background-color: #3498db; margin-bottom: 20px;">
+                Acessar o Sistema Zeta Web
+            </a>
+
+            <div class="credentials">
+                <strong>SCHUBART E RODRIGUES COMERCIO DE PECAS 13.281.674/0001-53</strong>
+                
+                <div class="credential-item">
+                    <span id="zeta-user-text-1">Usuário: marcosferrovelho10@gmail.com</span>
+                    <button class="copy-btn" onclick="copyToClipboard('zeta-user-text-1', 'Usuário Zeta 1')">Copiar</button>
+                </div>
+                
+                <div class="credential-item">
+                    <span id="zeta-password-text-1">Senha: D14m032012*</span>
+                    <button class="copy-btn" onclick="copyToClipboard('zeta-password-text-1', 'Senha Zeta 1')">Copiar</button>
+                </div>
+            </div>
+            
+            <div class="credentials">
+                <strong>ELTON CARLOS FORMAGI 57.071.708/0001-50</strong>
+                
+                <div class="credential-item">
+                    <span id="zeta-user-text-2">Usuário: particularpiscinas@outlook.com</span>
+                    <button class="copy-btn" onclick="copyToClipboard('zeta-user-text-2', 'Usuário Zeta 2')">Copiar</button>
+                </div>
+                
+                <div class="credential-item">
+                    <span id="zeta-password-text-2">Senha: D14m032012*</span>
+                    <button class="copy-btn" onclick="copyToClipboard('zeta-password-text-2', 'Senha Zeta 2')">Copiar</button>
+                </div>
+            </div>
+            
+            <!-- NOVO BLOCO: VÍDEO DE INSTRUÇÃO -->
+            <h2>Vídeo de Instrução</h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/wKGZ0bkk_yU" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <!-- FIM DO NOVO BLOCO -->
+            
+            <a href="https://wa.me/554733333663" class="support-btn" target="_blank">
+                Fale com o Suporte (WhatsApp) 📞
+            </a>
+            
+        </div>
+        
+    </div>
+
+    <div id="message">Copiado com sucesso!</div>
+
+    <script>
+        /**
+         * Função para copiar o texto de um elemento HTML para a área de transferência.
+         * @param {string} elementId O ID do elemento <span> que contém o texto (ex: 'uniplus-user-text').
+         * @param {string} itemType O tipo de item sendo copiado (ex: 'Usuário Uniplus' ou 'Senha Zeta').
+         */
+        function copyToClipboard(elementId, itemType) {
+            // Pega o elemento pelo ID
+            const element = document.getElementById(elementId);
+            
+            // Pega o texto completo do elemento (ex: "Usuário: contato")
+            let fullText = element.innerText;
+            
+            // Remove o prefixo para pegar apenas o valor
+            let valueToCopy = fullText.split(':')[1].trim();
+
+            // Usa a API moderna navigator.clipboard
+            navigator.clipboard.writeText(valueToCopy)
+                .then(() => {
+                    // Sucesso: Mostra a mensagem de confirmação
+                    const message = document.getElementById('message');
+                    message.innerText = itemType + ' copiado com sucesso!';
+                    message.style.display = 'block';
+                    
+                    // Esconde a mensagem após 2 segundos
+                    setTimeout(() => {
+                        message.style.display = 'none';
+                    }, 2000);
+                })
+                .catch(err => {
+                    // Erro
+                    console.error('Falha ao copiar:', err);
+                    alert('Erro ao tentar copiar o texto. Tente copiar manualmente.');
+                });
+        }
+    </script>
 
 </body>
 
 </html>
-
-
-
-
-
